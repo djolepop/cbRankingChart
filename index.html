@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Coinbase App Ranking Chart</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Interactive visualization of Coinbase app ranking data from the Apple App Store. Explore trends over time with detailed charts.">
+  <meta name="keywords" content="Coinbase, App Ranking, Data Visualization, Apple App Store, Chart">
+  <meta name="author" content="Djordje">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Coinbase App Ranking Chart">
+  <meta property="og:description" content="Interactive visualization of Coinbase app ranking data from the Apple App Store.">
+  <meta property="og:image" content="preview.png">
+  <meta property="og:url" content="https://www.yourwebsite.com">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Coinbase App Ranking Chart">
+  <meta name="twitter:description" content="Interactive visualization of Coinbase app ranking data from the Apple App Store.">
+  <meta name="twitter:image" content="preview.png">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- External Libraries -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+  
+  <!-- Main JavaScript File -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Coinbase App Rankings</h1>
+    
+    <div class="info-box">
+        <p>This visualization shows Coinbase app ranking data from the Apple App Store over time. Higher rankings (smaller numbers) appear at the top of the chart.</p>
+    </div>
+    
+    <div class="file-input">
+        <label for="csvFile">Upload CSV file:</label>
+        <input type="file" id="csvFile" accept=".csv">
+        <div id="loading" class="loading">Loading data, please wait...</div>
+    </div>
+    
+    <div class="controls">
+        <div class="button-group zoom-options">
+            <label>Time Range:</label>
+            <button id="allData">All Data</button>
+            <button id="last7Days">Last 7 Days</button>
+            <button id="last30Days">Last 30 Days</button>
+            <button id="last90Days">Last 90 Days</button>
+            <button id="year2024">2024 Only</button>
+            <button id="year2025">2025 Only</button>
+        </div>
+        <div class="button-group data-options">
+            <label>View Options:</label>
+            <button id="zoomOut">Reset Zoom</button>
+            <button id="toggleFinanceVisible">Toggle Finance Rank</button>
+            <button id="toggleAllAppsVisible">Toggle Overall Rank</button>
+            <button id="toggleNormalize">Normalize Scales</button>
+            <button id="fullscreenBtn" class="fullscreen-btn">Fullscreen</button>
+        </div>
+        <div class="filter-section">
+            <label>Custom Period:</label>
+            <select id="yearSelector">
+                <option value="all">All Years</option>
+            </select>
+            <select id="monthSelector">
+                <option value="all">All Months</option>
+                <option value="0">January</option>
+                <option value="1">February</option>
+                <option value="2">March</option>
+                <option value="3">April</option>
+                <option value="4">May</option>
+                <option value="5">June</option>
+                <option value="6">July</option>
+                <option value="7">August</option>
+                <option value="8">September</option>
+                <option value="9">October</option>
+                <option value="10">November</option>
+                <option value="11">December</option>
+            </select>
+            <button id="applyFilter">Apply Filter</button>
+        </div>
+        <div class="chart-style-toggle">
+            <label>Chart Style:</label>
+            <div class="toggle-container">
+                <span class="toggle-label">Lines with Markers</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="chartStyleToggle">
+                    <span class="slider"></span>
+                </label>
+                <span class="toggle-label">Smooth Lines</span>
+            </div>
+        </div><div class="chart-style-toggle">
+    <label>Crosshair:</label>
+    <div class="toggle-container">
+        <span class="toggle-label">Hide</span>
+        <label class="toggle-switch">
+            <input type="checkbox" id="crosshairToggle">
+            <span class="slider"></span>
+        </label>
+        <span class="toggle-label">Show</span>
+    </div>
+</div>
+    </div>
+    
+    <div id="chart" class="chart-container"></div>
+    
+    <div id="statsPanel" class="stats-panel">
+        <h3>Data Statistics</h3>
+        <div id="stats">Upload a CSV file to see statistics.</div>
+    </div>
+
+
+</body>
+</html>
