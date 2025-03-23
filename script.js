@@ -56,10 +56,8 @@ function processCsvText(csvText) {
                 return;
             }
             
-            // Set originalData globally for future filtering
             originalData = results.data;
             
-            // Initial display with full dataset
             processData(results.data);
             populateYearSelector(results.data);
         },
