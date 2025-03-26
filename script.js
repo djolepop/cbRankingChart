@@ -5170,7 +5170,19 @@ const embeddedData = [
     "formattedDate": "2025-Mar-25 8AM",
     "allAppsRank": 294,
     "financeAppsRank": 24
-  }
+  },
+    {
+    "date": "2025-03-25T19:00:00.000Z",
+    "formattedDate": "2025-Mar-25 8PM",
+    "allAppsRank": 298,
+    "financeAppsRank": 27
+  },
+    {
+    "date": "2025-03-26T07:00:00.000Z",
+    "formattedDate": "2025-Mar-26 8AM",
+    "allAppsRank": 292,
+    "financeAppsRank": 24
+  },
 ];
     
     loadingDiv.style.display = 'none';
