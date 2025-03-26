@@ -5158,6 +5158,18 @@ const embeddedData = [
     "formattedDate": "2025-Mar-24 8AM",
     "allAppsRank": 318,
     "financeAppsRank": 17
+  },
+    {
+    "date": "2025-03-24T19:00:00.000Z",
+    "formattedDate": "2025-Mar-24 8PM",
+    "allAppsRank": 301,
+    "financeAppsRank": 23
+  },
+    {
+    "date": "2025-03-25T07:00:00.000Z",
+    "formattedDate": "2025-Mar-25 8AM",
+    "allAppsRank": 294,
+    "financeAppsRank": 24
   }
 ];
     
